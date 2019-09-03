@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% for event in events['data'] %}
+{% if event['start_time'] > formatted_now %}
+
+<div class="container">
+    <div class="media border p-3">
+        <img src="{{ event['cover']['source'] }}" id="photo">
+        <div class="media-body">
+            <h4><small><a class="nav-link" href="https://www.facebook.com/events/{{ event['id'] }}">{{ event['name'] }} in... <i>{{ event['place']['name'] }}</i></a></small></h4>
+            <p id="start_time"> {{ event['start_time'] }} </p>
+        </div>
+    </div>
+</div>
+<p></p>
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}

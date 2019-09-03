@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap and CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript" src="/static/function.js"></script>
+
+    <title>Event finder</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="jumbotron">
+        <div id="title_text">
+          <h1 class="display-4">Event finder</h1>
+          <p class="lead">best tastes, views and sounds of your city</p>
+        </div>
+      </div>
+    </div>
+    <p></p>
+  
+    <div class="container">
+      <nav class="navbar navbar-expand-sm justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a accesskey="h" class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link" href="about">About</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <p></p>
+    
+    <div class="container">
+      <nav id="filter" class="navbar navbar-expand-sm justify-content-center">
+          <select tabindex="1" onchange="filter(event)" id="activity" class="form-inline-sm">
+              <option disabled selected>Choose your activity</option>
+              <option value="1">Nature and sport</option>
+              <option value="2">Party and music</option>
+              <option value="3">Food</option>
+              <option value="4">Culture</option>
+          </select>
+      </nav>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="natureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">You've chosen nature...</h5>
+            <button id="test" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ... it's a good way to relax :)
+          </div>
+          <div class="modal-footer">
+            <button id="gotIt" type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% block body %}{% endblock %}
+    {% block filter%}{% endblock %}
+  
+  </body>
+</html>
