@@ -11,7 +11,7 @@ from time import strptime, strftime
 app = Flask(__name__)
 
 # Get API
-token = {"EAAFKVKHsjTsBAIVr6XlWAgMZCbwG8oCa5b1MeZAcEqUGPfEwZATHA3V0IpwiYPEi71VTGgy2TtzKnSDiliVbZADR6DjJBEqdKupUnMlZA25BghDUgPd3ZAGncSNS6bnWkqePzdYDgiAzZBqF5HgZARA9zmcBxeJLZAJQ1rgvAB22L2AZDZD"}
+token = {"EAAFKVKHsjTsBAHjZCYj8uCj4Izt7bCrnyUJdNkNJUkDHndKNSvWQyvcNqk5Btcq90hSPiooeKXUkYxdQKVevQS9ZAZAuH9VxUYxO3Jd7WkCOZBZA9EtZC9gEAUdIL6g7tuApncaipgRJdVgho3uObtLKz0kctsxmUZD"}
 graph = facebook.GraphAPI(token)
 events = graph.get_connections(id="me", connection_name="events", fields="id, name, place, start_time, cover")
 
