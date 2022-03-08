@@ -1,5 +1,4 @@
-# Extend the token instruction
-# https://medium.com/@DrGabrielA81/python-how-making-facebook-api-calls-using-facebook-sdk-ea18bec973c8
+# To access events, become facebook marketing partner https://developers.facebook.com/docs/graph-api/reference/event/
 
 from flask import Flask, render_template
 import json
@@ -11,10 +10,12 @@ from time import strptime, strftime
 app = Flask(__name__)
 
 # Get API
-token = {"EAAFKVKHsjTsBAHjZCYj8uCj4Izt7bCrnyUJdNkNJUkDHndKNSvWQyvcNqk5Btcq90hSPiooeKXUkYxdQKVevQS9ZAZAuH9VxUYxO3Jd7WkCOZBZA9EtZC9gEAUdIL6g7tuApncaipgRJdVgho3uObtLKz0kctsxmUZD"}
-graph = facebook.GraphAPI(token)
-events = graph.get_connections(id="me", connection_name="events", fields="id, name, place, start_time, cover")
+token = {"EAAFKVKHsjTsBAKqhUPo58NLBj8MrQfdnKaugMZAEMhuoM9wE9DQ4QCQGSYQdMciAHmjMZBwnc9SnRyuXY7giumXYEBSP3rivLZBabJcaO2TYQqtNqaYVojH86cCvhpscZBXjPB6TxvIT2t1c3gkZCl4euTNffU7Vuz8j3cWCmSpoSuwaDkFO5Ut19Xh592q2dVaiu8RkZCZAoHoQ2ZB4zxhdJOS1NRL5nCo9gNF6LJPnTlxx3037Ku0g"}
+graph = facebook.GraphAPI(token, version=2.8)
+events = graph.get_connections(id='me', connection_name='events')
 
+
+print("events", events)
 # Format date  
 now = datetime.now()
 formatted_now = now.strftime('%Y-%m-%dT%H:%M:%S+0200')
